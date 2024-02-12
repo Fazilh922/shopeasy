@@ -1,0 +1,240 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        .logoimg{
+            height: 75px;
+            width: 250px;
+            color: blue;
+        }
+        p{
+           /* margin-top:  20px; */
+           border: 1px black;
+        }
+        h4{
+            margin-top: 20px;
+        }
+        .dd{
+            margin-top: 20px;
+        }
+    
+        
+      
+        
+        h2{
+            font-style: italic;
+            text-align: center;
+            color:darkblue
+        }
+        button{
+            width: 150px;
+            height: 35px;
+            background-color: darkblue;
+            text-align: center;
+            color: white;
+            margin-left: 90px;
+            border-radius: 10px;
+         
+            
+        }
+        input{
+            width:350px;
+          
+           
+        }
+        .b1{
+            margin-top: 20px;
+            border: 1px solid black;
+            width: 400px;
+            height: 650px;
+           border-radius: 20px;
+            color: darkblue;
+            font-style: unset;
+            font-size: large;
+        }
+        .f{
+            margin-top: 20px;
+        }
+
+
+     
+  
+      
+     
+        
+    </style>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-2">
+            <img class="logoimg" src="{% static 'images/logo1.jpg' %}" alt="">
+        </div>
+        <div class="col-1 f" >
+            <p><a href="{% url 'seller:about' %}">About US</a></p>
+        </div>
+        <div class="col-1 f">
+            <p><a href="{% url 'customer:contact' %}">Help&Support</a></p>
+        </div>
+        <!-- <div class="col-1 f">
+            <p>Sell Online</p>
+        </div> -->
+        <div class="col-1 f">
+            <p><a href="{% url 'customer:home' %}">HOME</a></p>
+        </div>
+        <!-- <div class="col-1 dd">
+        <li class="nav-item dropdown" style="list-style-type: none;">
+            
+            <ul class="dropdown-menu" >
+              <li><a class="dropdown-item" href="#">Leadership Principles</a></li>
+              <li><a class="dropdown-item" href="#">Facts About Shopeasy</a></li>
+            </ul>
+          </li>
+        <div class="col-1">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                who we are
+              </a>
+            </div>
+            
+        </div>
+        <div class="col-1 dd">
+            <li class="nav-item dropdown" style="list-style-type: none;">
+                
+                <ul class="dropdown-menu" >
+                  <li><a class="dropdown-item" href="#">Leadership Principles</a></li>
+                  <li><a class="dropdown-item" href="#">Facts About Shopeasy</a></li>
+                </ul>
+              </li>
+            <div class="col-1">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    what we do
+                  </a>
+                </div>
+                
+            </div>
+            <div class="col-1 dd">
+                <li class="nav-item dropdown" style="list-style-type: none;">
+                    
+                    <ul class="dropdown-menu" >
+                      <li><a class="dropdown-item" href="#">shopeasy india</a></li>
+                      <li><a class="dropdown-item" href="#">devices and services</a></li>
+                      <li><a class="dropdown-item" href="#">delivery and logistics</a></li>
+                    </ul>
+                  </li>
+                <div class="col-1">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Our work place
+                      </a>
+                    </div>
+                    
+                </div>
+                <div class="col-1 dd">
+                    <li class="nav-item dropdown" style="list-style-type: none;">
+                        
+                        <ul class="dropdown-menu" >
+                          <li><a class="dropdown-item" href="#">our employees</a></li>
+                          <li><a class="dropdown-item" href="#">employee benefits</a></li>
+                          <li><a class="dropdown-item" href="#">divesity,equity,and inclusion</a></li>
+                        </ul>
+                      </li>
+                      <div class="col-2">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            our planet
+                          </a>
+                        </div>
+                        
+                    </div>
+                    <div class="col-1 dd">
+                        <li class="nav-item dropdown" style="list-style-type: none;">
+                            
+                            <ul class="dropdown-menu" >
+                              <li><a class="dropdown-item" href="#">the climate pledge</a></li>
+                              <li><a class="dropdown-item" href="#">improving packeges</a></li>
+                              <li><a class="dropdown-item" href="#">sustainability website</a></li>
+                            </ul> -->
+                   
+                    
+        
+
+        
+   
+
+        </div>
+        <div class="row">
+            <div class="col-1"></div>
+            <h2>ADD PRODUCT</h2>
+            <div class="col-4"></div>
+            <div class="col-5 b1">
+        <form action="" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <label for="">PRODUCT</label><br>
+            <input type="text" name="title" id=""><br><br>
+            <label for="">DESCRIPTION</label><br>
+            <input type="text" name="description" id=""><br><br>
+            <label for="">CATEGORY</label><br>
+            <select  id="category" name="category">
+              {% for category in categories %}
+                  <option value="{{ category.id }}">{{ category.name }}</option>
+              {% endfor %}
+            </select><br><br>
+          
+            <label for="">STOCK</label><br>
+            <input type="text" name="stock" id=""><br><br>
+            <label for="">QUANTITY</label><br>
+            <input type="number" name="quantity" id=""><br><br>
+           
+            <label for="">PRICE</label><br>
+            <input type="number" name="price" id=""><br><br>
+            <label for="">IMAGE</label>
+            <input type="file" name="imag" id=""><br><br>
+            <button type="submit">ADD</button>
+           
+
+        </form>
+    </div>
+    </div>
+    <div class="footer">
+        <div class="row">
+       
+        <div class="col-2">
+         <h4>About</h4>
+         <p>contact us</p>
+         <p>about us</p>
+         <p>careers</p>
+         <p>shop easy stories</p>
+       </div>
+       <div class="col-2">
+         <h4>Help</h4>
+         <p>payments</p>
+         <p>shipping</p>
+         <p>FAQ</p>
+       </div>
+       <div class="col-3">
+         <h4>Consumer Policy</h4>
+         <p>cansellation and returns</p>
+         <p>security</p>
+         <p>Privacy</p>
+       </div>
+       <div class="col-2">
+       <h4>Social</h4>
+       <p>youtube</p>
+       <p>facebook</p>
+       <p>twitter</p>
+       </div>
+       <div class="col-2">
+         <h4>Mail Us</h4>
+         <p>Shopeasy internet private limited</p>
+         <p>Email Id-shopeasy846@gmail.com</p>
+       </div>
+     </div>
+    
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

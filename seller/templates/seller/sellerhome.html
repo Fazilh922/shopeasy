@@ -1,0 +1,212 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        .logoimg{
+            height: 75px;
+            width: 250px;
+            color: blue;
+        }
+        p{
+           margin-top:  20px;
+           border: 1px black;
+        }
+        h4{
+            margin-top: 20px;
+
+
+        }
+        .b1{
+          width: 100%; 
+          height: 450px; 
+
+        }
+        .w{
+            position: absolute;
+            /* border: 1px solid black; */
+            left: 54px;
+            top: 155px;
+            color:darkblue;
+
+
+        }
+        .w2{
+            position: absolute;
+            left: 1100px;
+            top: 155px;
+            color: darkblue;
+        }
+        .AB{
+            position: absolute;
+            top: 420px;
+            background-color: darkblue;
+            left: 680px;
+            color: white;
+            height: 45px;
+            border-radius: 20px;
+
+
+        }
+        .s{
+            height: 150px;
+            width: 150px;
+        }
+        .s1{
+            margin-top: 20px;
+            height: 100px;
+            width: 100px;
+        }
+        .s3{
+            margin-top: 20px;
+            height: 150px;
+            width: 300px;
+        }
+        .s4{
+            margin-top: 20px;
+            height: 120px;
+            width: 120px;
+            border-radius: 75px;
+        }
+        .s5{
+            height: 150px;
+            width: 150px;
+        }
+        .s6{
+            margin-top: 20px;
+            height: 120px;
+            width: 120px;
+            border-radius: 60px;
+        }
+        .b2{
+            width: 1500px;
+            height: 400px;
+
+        }
+        .BB{
+            color: white;
+            background-color: darkblue;
+            margin-top: 30PX;
+        }
+        a{
+            text-decoration: none;
+            color: white;
+        }
+      
+     
+        
+    </style>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-2">
+            <img class="logoimg" src="{% static 'images/logo1.jpg' %}" alt="">
+        </div>
+        <div class="col-1">
+            <p><a href="{% url 'seller:about' %}" style="color: black;">About US</a></p>
+        </div>
+        <div class="col-1">
+            <p><a href="{% url 'customer:contact' %}" style="color: black;">Help&Support</a></p>
+        </div>
+        <div class="col-1">
+            <p><a href="{% url 'seller:login' %}" style="color: black;">Sell Online</p></a>
+        </div>
+        <div class="col-1">
+            <p>HOME</p>
+        </div>
+        <div class="col-2">
+           <p><a href="{% url 'seller:dashboard' %}" style="color: black;">DASHBOARD</p></a>
+        </div>
+          
+    <div class="col-1"></div>
+        <div class="col-1">
+           <button class="BB"><a href="{% url 'seller:login' %}">LOGIN</a></button>
+        </div>
+        <div class="col-2">
+            <button class="BB"><a href="{% url 'seller:signup' %}">CREATE ACCOUNT</a></button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12" >
+            <img class="b2" src="{% static 'images/b2img.jpg' %}" alt="">
+        </div>
+    </div>
+    
+    
+    <div class="w">
+        <h3>Sell Online with Shopeasy</h3>
+    </div>
+    <div class="w2">
+        <h3>A Online Hypermart</h3>
+    </div>
+    <div class="button">
+        <button class="AB" ><a href="{% url 'seller:login' %}">Start Selling</a></button>
+    </div>
+    
+    <div class="row">
+    <div class="col-3">
+        <img class="s" src="{% static 'images/sel1.jpg' %}" alt="">
+    </div>
+    <div class="col-2">
+        <img class="s1" src="{% static 'images/sel2.jpg' %}" alt="">
+    </div>
+    <div class="col-3">
+        <img class="s3" src="{% static 'images/logo1.jpg' %}" alt="">
+    </div>
+   
+    <div class="col-2">
+        <img class="s5" src="{% static 'images/sel5.jpg' %}" alt="">
+    </div>
+    <div class="col-2">
+        <img class="s6" src="{% static 'images/sel6.jpg' %}" alt="">
+    </div>
+
+</div>
+<div class="footer">
+    <div class="row">
+   
+    <div class="col-2">
+     <h4>About</h4>
+     <p>contact us</p>
+     <p>about us</p>
+     <p>careers</p>
+     <p>shop easy stories</p>
+   </div>
+   <div class="col-2">
+     <h4>Help</h4>
+     <p>payments</p>
+     <p>shipping</p>
+     <p>FAQ</p>
+   </div>
+   <div class="col-3">
+     <h4>Consumer Policy</h4>
+     <p>cansellation and returns</p>
+     <p>security</p>
+     <p>Privacy</p>
+   </div>
+   <div class="col-2">
+   <h4>Social</h4>
+   <p>youtube</p>
+   <p>facebook</p>
+   <p>twitter</p>
+   </div>
+   <div class="col-2">
+     <h4>Mail Us</h4>
+     <p>Shopeasy internet private limited</p>
+     <p>Email Id-shopeasy846@gmail.com</p>
+   </div>
+ </div>
+
+
+    
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

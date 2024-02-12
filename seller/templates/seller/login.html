@@ -1,0 +1,126 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <style>
+     .box{
+        margin-top: 150px;
+        border: 1px solid black;
+        background-image: url(https://i.pinimg.com/564x/61/a6/9a/61a69a2e57c81bb13c26b14bdc612ae6.jpg);
+        height: 350px;
+        width: 565px;
+      
+    }
+    h1{
+        /* color: white; */
+        text-align: center;
+    }
+    button{
+        width: 100px;
+        height: 45px;
+        background-color: darkblue;
+        color: white;
+        border-radius: 50px;
+        margin-left: 218px;
+        margin-top: 122px;
+
+    }
+    p{
+        color: white;
+        margin-left: 150px;
+        margin-top: 14px;
+       
+    }
+    .box2{
+        margin-left: 150px;
+        width: 250px;
+        height: 35px;
+        border-radius: 20px;
+        margin-top: 20px;
+    }
+    .box3{
+        margin-left: 150px;
+        width: 250px;
+        height: 35px;
+        border-radius: 20px;
+        margin-top: 0px;
+    }
+    .navb{
+        margin-top: 25px;
+    }
+    .at{
+        color: white;
+        text-align: center;
+    }
+    
+    </style>
+
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row navb">
+            <div class="col-8"></div>
+            <div class="col-1 " > <a href="{% url 'seller:dashboard' %}">Account</a> </div>
+            <div class="col-1 "> <a href="{% url 'customer:contact' %}"> Contact</a></div>
+            <div class="col-1 "><a href="{% url 'seller:about' %}">About Us</a></div>
+            <div class="col-1 "><a href="{% url 'seller:sellerhome' %}">Home</a></div>
+        </div>
+    </div>
+    <div>
+      
+            
+    <div class="container-fluid">
+        <h1 class="">Login</h1>
+        <div class="row" >
+          
+            <div class="col-4"></div>
+            
+            <div class="col-5 box">
+                <form action="" method="post" onsubmit="return validateform()">
+                    {% csrf_token %}
+             
+                
+                    <input class="box2" type ="text" name=""id=""id=""placeholder="Email address or phone number"> <br><br>
+                    <input class="box3" type="password"name=""id=""id=""placeholder="password"> <br><br>
+                
+                    <button type="submit">Login</button><br>
+                    <a class="at"  href="{url 'customer:forget'}">Forget password</a><a class="at" href="{url 'seller:signup'}"> or Log into new account</a>
+                    <p class="in" id="error" style="color:white">{{msg}}</p>
+
+
+                
+                   
+                
+                    
+            </div>
+            </form>
+
+            
+   
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+            <script>
+                function validateform(){
+                    var email=document.getElementById("email").value
+                    var password=document.getElementById("password").value
+                
+                
+                
+                    if (email===""||password===""){
+                        document.getElementById("error").innerHTML="Invalid email or password"
+                
+                
+                        return false
+                    }
+                
+                
+                    else{
+                        return true
+                    }
+                }
+            </script>
+</body>
+</html>

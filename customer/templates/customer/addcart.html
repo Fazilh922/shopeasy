@@ -1,0 +1,174 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .add{
+            background-color: darkblue;
+            /* font-family: 'Times New Roman', Times, serif; */
+            font-weight: bolder;
+            font-style: italic;
+          
+            
+
+        }
+        h2{
+            color: white;
+            padding-top: 20px;
+        }
+        input{
+            width: 50px;
+        }
+        .tb{
+         
+            
+
+        }
+        h1{
+            text-align: center;
+            color: white;
+            background-color: darkblue;
+       
+        }
+        tr{
+            margin-left: 0%;
+            
+        }
+        h4{
+            color: white;
+            background-color: darkblue;
+           
+
+        }
+        .tt{
+            margin-left: 950px;
+            margin-top: 10px;
+        }
+        .img{
+            height: 100px;
+        }
+        td{
+            color: aliceblue;
+        }
+        a{
+            color: white;
+            text-decoration: none;
+        }
+        th{
+            color: white;
+            font-size: 20px;
+            padding: 10px;
+        }
+        td{
+            color: black;
+            text-align: center;
+            border: 1px solid black;
+        }
+        .b{
+            background-color: darkblue;
+            color: white;
+            height: 30px;
+            border-radius: 10px;
+        }
+        .box th{
+           color: black;border: 1px solid black;
+            
+            
+        }
+        .box{
+            margin-left: 1300px;
+        }
+        .c{
+            margin-left: 1300px;
+            color:white;
+            background-color: darkblue;
+            margin-top: 20px;
+            height: 35px;
+            width: 200px;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div class="add" >
+        
+        <h1 class="add">ADD TO CART</h1>
+       
+        
+    <table class="tt">
+       <tr class="add">
+        <th><h4><a href="{% url 'customer:about' %}">Aboutus</a></h4></th> 
+        <th><h4><a href="{% url 'customer:home' %}">Home</a></h4></th>
+        <th><h4><a href="{% url 'customer:contact' %}">Contact</a></h4></th>
+       </tr>
+       
+      
+       
+
+    </table>
+    </div>
+
+    
+    <div class="con" class="add">
+        <table class="tb" class="add" style="width: 100%;">
+        <tr class="add">
+            <th>Products</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Delete</th>
+           
+        </tr>
+       {% for item in cart_items %}
+       <tr>
+        <td>
+            <img class="img" src="{{item.product.image.url}}" alt="">
+        </td>
+        <td>
+        {{item.product.price}}
+        </td>
+        <td>
+            {{item.quantity}}
+        </td>
+        <td>
+            <form action="{% url 'customer:remove_from_cart' item.product.id %}" method="post" >
+                {% csrf_token %}
+            <button class="b" type="submit" class="btn btn danger">Delete</button>
+            
+            </form>
+          
+            
+        </td>
+
+        
+
+        
+       </tr>
+       {% endfor %}
+       <tr>
+        
+   
+        </table>
+
+        <table class="box"> 
+            <tr>
+                
+                
+             <th  >Total price</th>
+            <th >{{total_price}}</th>
+            <button class="c" type="submit" class="btn btn danger">Continue</button>
+        </tr></table>
+ 
+
+    </div>
+
+
+</div>
+
+
+    
+</body>
+</html>
