@@ -52,19 +52,23 @@
         input{
             margin-left: 60px;
         }
+        a{
+            color: white;
+            text-decoration: none;
+        }
     </style>
 </head>
 <body>
     <div class="container-fluid">
         <div class="row">
             <div class="col-1">
-                <p>About US</p>
+                <p><a href="{% url 'customer:about' %}">About US</a></p>
             </div>
             <div class="col-1">
-                <p>Help&Support</p>
+                <p><a href="{% url 'customer:contact' %}">Help&Support</a></p>
             </div>
             <div class="col-1">
-                <p>HOME</p>
+                <p><a href="{% url 'customer:firstpage' %}">HOME</a></p>
             </div>
         
           

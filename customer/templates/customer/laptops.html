@@ -133,13 +133,16 @@
                 <input type="number" name="Quantity" id="Quantity" value="1" min="1" required>
 
               </div>
-              <a href="{% url 'customer:add_to_cart' i.id %}" class="btn btn-primary">Add to cart</a>
-              <a href="{% url 'customer:pay' %}" class="btn btn-primary ">Buy now</a>
-            </form>
-               
+              <button type="submit" class="btn btn-primary">Add to cart</button>
+              <!-- <a href="{% url 'customer:add_to_cart' i.id %}" class="btn btn-primary">Add to cart</a> -->
+           
+         
+            <a href="{% url 'customer:pay' %}" class="btn btn-primary ">Buy now</a>
+          
             </div>
          </div>
       </div>
+    </form>
       <div class="col-1"></div>
       {% endfor %}
       <!-- <div class="col-2">
