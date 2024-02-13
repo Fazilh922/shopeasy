@@ -88,7 +88,8 @@
                     <input class="box3" type="password"name=""id=""id=""placeholder="password"> <br><br>
                 
                     <button type="submit">Login</button><br>
-                    <a class="at"  href="{url 'customer:forget'}">Forget password</a><a class="at" href="{url 'seller:signup'}"> or Log into new account</a>
+                    <a class="at"  href="{% url 'customer:forget' %}">Forget password</a>
+                    <a class="at" href="{% url 'seller:signup' %}"> or Log into new account</a>
                     <p class="in" id="error" style="color:white">{{msg}}</p>
 
 
