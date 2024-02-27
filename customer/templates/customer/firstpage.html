@@ -10,7 +10,7 @@
     <style>
         .logoimg{
             height: 100px;
-            width: 300px;
+            width: 240px;
         }
         .w{
             margin-top: 30px;
@@ -92,27 +92,27 @@
 <body>
 <div class="container-fluid">
     <div class="row">
-        <div class="col-1">
+        <div class="col-2">
             <img class="logoimg" src="{% static 'images/logo1.jpg' %}" alt="">
         </div>
-        <!-- <div class="col-2"></div> -->
-        <div class="col-2">
+        <!-- <div class="col-1"></div> -->
+        <div class="col-1" >
             <img class="p1" src="{% static 'images/p1.jpg' %}" alt="">
-           <label class="w" for=""><a class="icon" href="{% url 'customer:about' %}">About US</a></label>  
+           <label class="w" for=""><a class="icon" href="{% url 'customer:about' %}">About</a></label>  
         </div>
-        <div class="col-2">
+        <div class="col-1">
             <img class="p2" src="{% static 'images/p2.jpg' %}" alt="">
-            <label class="w" for=""><a class="icon" href="{% url 'customer:contact' %}">Help&Support</a></label>
+            <label class="w" for=""><a class="icon" href="{% url 'customer:contact' %}">Help</a></label>
         </div>
-        <div class="col-2">
+        <div class="col-1">
             <img class="p2" src="{% static 'images/icon8.jpg' %}" alt="">
             <label class="w" for=""><a class="icon" href="{% url 'customer:firstpage' %}">Home</a></label>
         </div>
         <div class="col-2">
-        <img class="p2" src="{% static 'images/icon8.jpg' %}" alt="">
+        <img class="p2" src="{% static 'images/icon2.jpg' %}" alt="">
         <label class="w" for=""><a class="icon" href="{% url 'seller:sellerhome' %}">Become Seller</a></label>
         </div>
-        <!-- <div class="col-2"></div> -->
+        <!-- <div class="col-1"></div> -->
         <div class="col-2">
         <button><a href="{% url 'customer:signup' %}">CREATE ACCOUNT</a></button>
          </div>
